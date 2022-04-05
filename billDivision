@@ -1,0 +1,10 @@
+//this is only function u can use it in editor.
+
+int pageCount(int n, int p) {
+    int fromStart,fromEnd;
+    if(p==n) return 0;
+     fromStart = p/2;
+     fromEnd = (n/2)-fromStart;
+    if(fromEnd>fromStart) return fromStart;
+    else return fromEnd;
+}
