@@ -1,0 +1,30 @@
+# HackerRank-Solution
+Its my solution for Problem Solving.
+#include <iostream>
+#include <map>
+using namespace std;
+void salesByMarch(int ar[],int n){
+    int counter=0;
+    map<int,int>sales;
+    for(int i=0;i<n;i++){
+        sales[ar[i]]+=1;
+    }
+    map<int,int>::iterator itr;
+    for(itr=sales.begin();itr!=sales.end();itr++){
+       if(itr->second>1){
+           counter+=(itr->second)/2;
+       }
+    }
+    cout<<counter;
+}
+int main(){
+    int n;
+    cin>>n;
+    int *ar=new int[n];
+    for(int i=0;i<n;i++){
+        cin>>ar[i];
+    }
+    salesByMarch(ar, n);
+    delete [] ar;
+    return 0;
+}
