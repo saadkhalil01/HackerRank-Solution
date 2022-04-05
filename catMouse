@@ -1,0 +1,27 @@
+# HackerRank-Solution
+Its my solution for Problem Solving.
+
+//this is only function not a complete program 
+
+string catAndMouse(int x, int y, int z) {
+    string res;
+    
+    int dif[2]={0,0};
+    dif[0]=z-x;
+    dif[1]=z-y;
+    for(int i=0;i<2;i++){
+        if(dif[i]<0) dif[i]*=-1;
+    }
+    
+    if(dif[0]==dif[1]){
+        res="Mouse C";
+    }
+    if(dif[0]>dif[1]){
+        res="Cat B";
+    }
+    if(dif[0]<dif[1]){
+        res="Cat A";
+    }
+
+return res;
+}
