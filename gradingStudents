@@ -1,0 +1,30 @@
+# HackerRank-Solution
+Its my solution for Problem Solving.
+#include<iostream>
+using namespace std;
+void roundOFF(int *arr,int size){
+    for(int i=0;i<size;i++){
+        if(arr[i]>=38){
+            if((arr[i]+2)%5==0 ){
+                arr[i]+=2;}
+            if((arr[i]+1)%5==0){
+                arr[i]+=1;
+            }     
+        }
+    }
+    for(int i=0;i<size;i++){
+         cout<<arr[i]<<endl;
+    }
+}
+int main()
+{
+    int noSub,*marks;
+    cin>>noSub;
+    marks = new int[noSub];
+    for(int i=0;i<noSub;i++){
+        cin>>marks[i];
+    }
+    roundOFF(marks,noSub);
+    
+    
+}
