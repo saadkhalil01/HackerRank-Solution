@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+void getvalues(int ar[],int k){
+    for(int i=0;i<k;i++){
+        cin>>ar[i];
+    }
+}
+int calculateSpent(int *ar1,int* ar2,int n1,int n2,int totalMoney){
+    
+    
+    int sum=-1,highest=-1;
+    for(int i=0;i<n1;i++){
+       for(int j=0;j<n2;j++){
+           sum=ar1[i]+ar2[j];
+           if(sum<=totalMoney && highest < sum){
+               highest=sum;
+           }
+       }
+    }
+    if(highest>totalMoney){
+       return -1;
+    }
+    else{
+       return highest;
+       }
+}
+int main()
+{
+    int n,f,s;
+    cin>>n>>f>>s;
+    int *kbord=new int[f];
+    int *usb=new int[s];
+    getvalues(kbord, f);
+    getvalues(usb, s);
+    
+    cout<<calculateSpent(kbord,usb,f,s,n);
+    
+    delete [] kbord;
+    delete [] usb;
+}
